@@ -113,7 +113,7 @@
       `CANCEL_BUTTON_TEXT` is a text of cancel button on screen you can pass text of your choice and language,<br />
       `isShowFlashIcon` is bool value used to show or hide the flash icon,<br />
       `scanMode` is a enum in which user can pass any of `{ QR, BARCODE, DEFAULT }`, if nothing is passed it will consider a default value which will be `QR`. It shows the graphics overlay like for barcode and QR.
-    - Continuous scan:
+    - Continuous scan:<br />
     If you need to scan barcodes continuously without closing camera use `FlutterBarcodeScanner.getBarcodeStreamReceiver` params will be same like `FlutterBarcodeScanner.scanBarcode` e.g.
     ```dart 
      FlutterBarcodeScanner.getBarcodeStreamReceiver("#ff6666", "Cancel", false, ScanMode.DEFAULT)
