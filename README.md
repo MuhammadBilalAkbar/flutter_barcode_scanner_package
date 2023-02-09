@@ -108,7 +108,7 @@
                                                     scanMode,
                                          );
       ```
-      Here in `scanBarcode`,
+      Here in `scanBarcode`,<br />
       `COLOR_CODE` is hex-color which is the color of line in barcode overlay you can pass color of your choice,<br />
       `CANCEL_BUTTON_TEXT` is a text of cancel button on screen you can pass text of your choice and language,<br />
       `isShowFlashIcon` is bool value used to show or hide the flash icon,<br />
