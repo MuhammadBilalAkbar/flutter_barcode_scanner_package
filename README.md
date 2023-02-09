@@ -109,10 +109,10 @@
                                          );
       ```
     Here in `scanBarcode`,
-   `COLOR_CODE` is hex-color which is the color of line in barcode overlay you can pass color of your choice,
-   `CANCEL_BUTTON_TEXT` is a text of cancel button on screen you can pass text of your choice and language,
-   `isShowFlashIcon` is bool value used to show or hide the flash icon,
-   `scanMode` is a enum in which user can pass any of `{ QR, BARCODE, DEFAULT }`, if nothing is passed it will consider a default value which will be `QR`. It shows the graphics overlay like for barcode and QR.
+    `COLOR_CODE` is hex-color which is the color of line in barcode overlay you can pass color of your choice,
+    `CANCEL_BUTTON_TEXT` is a text of cancel button on screen you can pass text of your choice and language,
+    `isShowFlashIcon` is bool value used to show or hide the flash icon,
+    `scanMode` is a enum in which user can pass any of `{ QR, BARCODE, DEFAULT }`, if nothing is passed it will consider a default value which will be `QR`. It shows the graphics overlay like for barcode and QR.
     - Continuous scan:
     If you need to scan barcodes continuously without closing camera use `FlutterBarcodeScanner.getBarcodeStreamReceiver` params will be same like `FlutterBarcodeScanner.scanBarcode` e.g.
     ```dart 
@@ -122,7 +122,7 @@
       });
     ```
     - `scanBarcodeNormal()` method:
-   ```dart
+    ```dart
 
       Future<void> scanBarcodeNormal() async {
    String barcodeScanRes;
@@ -148,10 +148,9 @@
    _scanBarcode = barcodeScanRes;
    });
    }
-   ```
-
+    ```
     - `scanQR()` method:
-       ```dart
+    ```dart
       Future<void> scanQR() async {
       String barcodeScanRes;
       // Platform messages may fail, so we use a try/catch PlatformException.
@@ -176,19 +175,19 @@
       _scanBarcode = barcodeScanRes;
       });
       }
-      ```
+    ```
     - `startBarcodeScanStream()` method:
-      ```dart 
-Future<void> startBarcodeScanStream() async {
-FlutterBarcodeScanner.getBarcodeStreamReceiver(
-'#ff6666',
-'Cancel',
-true,
-ScanMode.BARCODE,
-)!
-.listen(
-(barcode) => debugPrint(barcode),
-);
-}
-      ```
+    ```dart
+    Future<void> startBarcodeScanStream() async {
+    FlutterBarcodeScanner.getBarcodeStreamReceiver(
+    '#ff6666',
+    'Cancel',
+    true,
+    ScanMode.BARCODE,
+    )!
+    .listen(
+    (barcode) => debugPrint(barcode),
+    );
+    }
+    ```
         
