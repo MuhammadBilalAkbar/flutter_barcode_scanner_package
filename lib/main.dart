@@ -11,11 +11,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => MaterialApp(
-        title: 'Barcode scan',
+        title: 'Barcode Scan',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.deepPurple,
+          appBarTheme: const AppBarTheme(
+            centerTitle: true,
+            titleTextStyle: TextStyle(
+              fontSize: 50.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           textTheme: const TextTheme(
-            bodyMedium: TextStyle(fontSize: 24.0),
+            bodyMedium: TextStyle(fontSize: 30),
+            labelLarge: TextStyle(fontSize: 30),
           ),
         ),
         home: const BarCodeScanner(),
@@ -95,40 +103,31 @@ class BarCodeScannerState extends State<BarCodeScanner> {
   }
 
   @override
-  Widget build(BuildContext context) => MaterialApp(
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text(
-              'Barcode scan',
-              style: TextStyle(
-                  fontSize: Theme.of(context).textTheme.bodyMedium!.fontSize),
-            ),
-          ),
-          body: Builder(
-            builder: (context) => Container(
-              alignment: Alignment.center,
-              child: Flex(
-                direction: Axis.vertical,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  ElevatedButton(
-                    onPressed: scanBarcodeNormal,
-                    child: const Text('Start barcode scan'),
-                  ),
-                  ElevatedButton(
-                    onPressed: scanQR,
-                    child: const Text('Start QR scan'),
-                  ),
-                  ElevatedButton(
-                    onPressed: startBarcodeScanStream,
-                    child: const Text('Start barcode scan stream'),
-                  ),
-                  Text(
-                    'Scan result : $_scanBarcodeResult\n',
-                    style: const TextStyle(fontSize: 20),
-                  )
-                ],
-              ),
+  Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(
+          title: const Text('Barcode Scan'),
+        ),
+        body: Builder(
+          builder: (context) => Container(
+            alignment: Alignment.center,
+            child: Flex(
+              direction: Axis.vertical,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: scanBarcodeNormal,
+                  child: const Text('Start barcode scan'),
+                ),
+                ElevatedButton(
+                  onPressed: scanQR,
+                  child: const Text('Start QR scan'),
+                ),
+                ElevatedButton(
+                  onPressed: startBarcodeScanStream,
+                  child: const Text('Start barcode scan stream'),
+                ),
+                Text('Scan result : $_scanBarcodeResult\n'),
+              ],
             ),
           ),
         ),
